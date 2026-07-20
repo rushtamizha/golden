@@ -368,7 +368,7 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 1, y: -20 }}
             transition={{ type: "spring", duration: 0.35 }}
-            className="lg:hidden w-full absolute top-[70px] bg-white shadow-xs border-b border-gray-100 p-5 z-50 origin-top"
+            className={`lg:hidden  absolute left-4 right-4 rounded-2xl ${scrolled ? "top-[70px]" : "top-[80px]"} transition-all bg-white shadow-xs border-b border-gray-100 p-5 z-50 origin-top`}
           >
             <div className="flex flex-col gap-3">
               
@@ -426,7 +426,7 @@ const Navbar = () => {
                     setIsMobileOpen(false);
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full hover:text-white bg-[#fbb817] ${theme.bgColor} py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-xs transition-colors`}
+                  className={`w-full hover:text-white bg-[#fbb817] ${theme.hoverBg} py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-xs transition-colors`}
                 >
                   <MessageCircle size={16} /> BOOK NOW 
                 </motion.button>
