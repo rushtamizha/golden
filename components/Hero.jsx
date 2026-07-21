@@ -580,7 +580,7 @@ export default function TaxiBookingHero() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full mt-5 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition-all text-center shadow-lg flex items-center justify-center gap-2.5 ${theme.hoverBg}`}
+              className={`w-full mt-5 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition-all text-center shadow-lg flex items-center justify-center gap-2.5 ${theme.bgColor}`}
               style={{
                 backgroundColor: theme.textColor.includes("[")
                   ? theme.textColor.match(/\[(.*?)\]/)?.[1]
