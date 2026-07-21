@@ -6,3 +6,83 @@
   scroll-behavior: smooth;
   font-family: "DM Sans", sans-serif;
 }
+
+
+/* 1. Main Dropdown Card Overlay Container */
+.pac-container {
+  background-color: #ffffff !important;
+  border: 1px dashed #ff7d7d !important; /* Tailwind border-gray-200 */
+  border-radius: 1rem !important;        /* Tailwind rounded-2xl */
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important; /* shadow-xl */
+  font-family: var(--font-plus-jakarta), sans-serif !important;
+  margin-top: 6px !important;
+  padding: 6px !important;
+  z-index: 999999 !important; /* Guarantees it floats over modals/input elements */
+}
+
+/* 2. Individual Address Rows */
+.pac-item {
+  padding: 10px 16px !important;
+  font-size: 13px !important;
+  border-radius: 12px;
+  color: #4b5563 !important; /* Tailwind text-gray-600 */
+  border: none; 
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Hover & Focus Interactions */
+.pac-item:hover, 
+.pac-item:focus {
+  background-color: #ffefef !important; /* Tailwind bg-blue-50 */
+  color: #af1e1e !important;            /* Tailwind text-blue-800 */
+}
+
+/* 3. Text Bold Accent Match (e.g., matching text typed by user) */
+.pac-matched {
+  color: #eb2525 !important; /* Changes matched bold text to modern clear blue */
+  font-weight: 700 !important;
+}
+
+/* 4. Sub-location Description / Secondary Label text */
+.pac-item-query {
+  font-size: 13px !important;
+  color: #271111 !important; /* Tailwind text-gray-950 */
+  padding-right: 4px !important;
+}
+
+/* 5. Custom Pin Vector Icon Override styling */
+.pac-icon {
+  margin-right: 12px !important;
+  margin-top: 0 !important;
+  opacity: 0.6 !important;
+  background-size: 16px !important;
+}
+
+/* 6. Clean Branding Layer */
+.hdpi .pac-logo:after {
+  padding: 8px 16px !important;
+  background-position: right 16px center !important;
+  border-top: 1px solid #f6f3f3 !important;
+}
+
+.pac-logo:after {
+  display: none !important;
+  content: "" !important;
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.pac-icon {
+  display: none !important;
+  width: 0 !important;
+  margin: 0 !important;
+}
+
+/* 2. Re-align the text layout to flush left */
+.pac-item {
+  padding-left: 16px !important; /* Retains clean padding on the container edge */
+}
