@@ -17,7 +17,7 @@ export async function POST(request) {
       service: "gmail",
       auth: {
         user: "eswaran17phu012@gmail.com",
-        pass: "fear umjx ajlx gdby",
+        pass: "hcrb dnzs zxkp agna",
       },
     });
 
