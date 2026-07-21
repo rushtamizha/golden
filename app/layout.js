@@ -2,6 +2,8 @@ import "@/app/globals.css";
 import RegionModal from "@/components/RegionModal";
 import { RegionProvider } from "./context/RegionContext";
 import Navbar from "@/components/Navbar";
+import ContactButton from "@/components/WhtasappAppButton";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Your Premium Taxi Service",
@@ -19,7 +21,9 @@ export default function RootLayout({ children }) {
           {/* Main application tree */}
           <main className="relative min-h-screen">
             <Navbar/>
+            <ContactButton/>
             {children}
+            <Footer/>
           </main>
         </RegionProvider>
       </body>
