@@ -33,7 +33,7 @@ const ContactButton = () => {
       {actions.map((action) => (
         <div key={action.id} className="relative flex flex-col items-center justify-center group pointer-events-auto">
           {/* Label on Hover - Now shows above the button */}
-          <span className="absolute bottom-16 px-3 py-1 bg-white text-slate-800 text-xs font-bold rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-slate-100 pointer-events-none">
+          <span className="absolute bottom-16 px-3 py-1 bg-white text-slate-800 text-xs font-semibold rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-slate-100 pointer-events-none">
             {action.label}
           </span>
           

@@ -16,12 +16,8 @@ import { companyInfo } from '@/lib/data';
 import { useRegion } from '@/app/context/RegionContext';
 
 const TOP_ROUTES = [
-  { name: 'Chennai One Way Taxi', link: '#' },
-  { name: 'Bangalore One Way Taxi', link: '#' },
-  { name: 'Coimbatore One Way Taxi', link: '#' },
-  { name: 'Madurai One Way Taxi', link: '#' },
-  { name: 'Pondicherry One Way Taxi', link: '#' },
-  { name: 'Trichy One Way Taxi', link: '#' },
+  { name: 'Kerala Taxi', link: '#' },
+  { name: 'Tamil Nadu Taxi', link: '#' },
 ];
 
 const SERVICES = [
@@ -53,7 +49,7 @@ export default function Footer() {
             >
               <div className="relative flex-shrink-0 transition-transform duration-300 h-12 w-12 group-hover:scale-105">
                 <Image
-                  src="/icon1.png"
+                  src={companyInfo.companyLogo}
                   alt={`${companyInfo?.companyName || 'Company'} Logo`}
                   fill
                   sizes="48px"
@@ -67,13 +63,13 @@ export default function Footer() {
                     {companyInfo?.companyName?.split(" ").slice(1).join(" ") || "Travels"}
                   </span>
                 </p>
-                <p className="text-[11px] font-bold text-gray-500 tracking-wider uppercase">
-                  {fares.stateName} Premium Ride Experience
+                <p className="text-[11px] font-semibold text-white tracking-wider uppercase">
+                  {companyInfo.companySlogan}
                 </p>
               </div>
             </Link>
             
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+            <p className="text-white text-sm leading-relaxed max-w-sm">
               South India's trusted intercity drop taxi service offering budget-friendly, professional one-way and round-trip experiences across {fares.stateName} and neighboring regions.
             </p>
 
@@ -136,7 +132,7 @@ export default function Footer() {
               >
                 <Phone className={`w-4 h-4 fill-current group-hover:scale-105 transition-transform ${theme.textColor}`} />
                 <div className="min-w-0">
-                  <span className="block text-[9px] uppercase font-bold text-gray-500 tracking-wider">Call Support</span>
+                  <span className="block text-[9px] uppercase font-semibold text-gray-500 tracking-wider">Call Support</span>
                   <span className="block text-sm font-black text-white tracking-wide">+{primaryPhone}</span>
                 </div>
               </a>
@@ -149,12 +145,12 @@ export default function Footer() {
               >
                 <MessageSquare className="w-4 h-4 text-[#25d366] fill-current group-hover:scale-105 transition-transform" />
                 <div className="min-w-0">
-                  <span className="block text-[9px] uppercase font-bold text-gray-500 tracking-wider">WhatsApp Reservation</span>
-                  <span className="block text-sm font-black text-white tracking-wide">Instant Response</span>
+                  <span className="block text-[9px] uppercase font-semibold text-gray-500 tracking-wider">WhatsApp Reservation</span>
+                  <span className="block text-sm font-semibold text-white tracking-wide">Instant Response</span>
                 </div>
               </a>
 
-              <div className="flex items-start gap-3 px-1 pt-1 text-xs text-gray-400 leading-relaxed">
+              <div className="flex items-start gap-3 px-1 pt-1 text-xs text-white leading-relaxed">
                 <MapPin className={`w-4 h-4 shrink-0 mt-0.5 ${theme.textColor}`} />
                 <span>Headquartered in {fares.stateName}, serving all primary sectors across South India.</span>
               </div>
@@ -166,10 +162,10 @@ export default function Footer() {
         {/* BOTTOM METADATA / LEGAL SUMMARY BAR */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 text-xs gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-center sm:text-left">
-            <span>&copy; {currentYear} <span className="text-gray-200 font-bold">{companyInfo?.companyName || 'Tours & Travels'}</span>. All rights reserved.</span>
-            <div className="hidden sm:inline text-gray-700">|</div>
+            <span>&copy; {currentYear} <span className="text-gray-200 font-semibold">{companyInfo?.companyName || 'Tours & Travels'}</span>. All rights reserved.</span>
+            <div className="hidden sm:inline text-white">|</div>
             <div className="flex items-center gap-4">
-              <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
+              {/* <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link> */}
               <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
             </div>
           </div>

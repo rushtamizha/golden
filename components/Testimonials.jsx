@@ -114,11 +114,11 @@ export default function Testimonials() {
         {/* SECTION HEADER BLOCK */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div className="space-y-2">
-            <div className={`flex items-center gap-2 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full w-max ${theme.pillBg} ${theme.textColor}`}>
+            <div className={`flex items-center gap-2 font-semibold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full w-max ${theme.pillBg} ${theme.textColor}`}>
               <MessageCircle className="w-3.5 h-3.5" />
               Verified Google Reviews
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 tracking-tight leading-tight">
               Trusted By Thousands <br />
               <span className={theme.textColor}>Of {fares.stateName} Travelers</span>
             </h2>
@@ -156,7 +156,7 @@ export default function Testimonials() {
               </svg>
 
               <span className="font-medium text-gray-700">
-                Write a Review on <strong className="text-gray-900 font-bold">Google</strong>
+                Write a Review on <strong className="text-gray-900 font-semibold">Google</strong>
               </span>
 
               <ExternalLink className="w-3.5 h-3.5 text-gray-400 ml-0.5" />
@@ -182,7 +182,7 @@ export default function Testimonials() {
           >
             {reviews.map((review) => (
               <SwiperSlide key={review.id} className="h-auto">
-                <div className="bg-gray-50/70 border border-gray-100 rounded-[2rem] p-6 md:p-8 flex flex-col h-full justify-between transition-all duration-300 hover:bg-white hover:shadow-md hover:border-gray-200 m-0.5 relative group">
+                <div className="bg-white border border-gray-100 rounded-[2rem] p-6 md:p-8 flex flex-col h-full justify-between transition-all duration-300 hover:bg-white hover:shadow-xs hover:border-gray-200 m-0.5 relative group">
                   
                   {/* Real Google Brand Logo Badge */}
                   <div className="absolute right-6 top-6 bg-white/90 border border-gray-200/80 p-1.5 rounded-xl shadow-2xs group-hover:shadow-xs transition-shadow">
@@ -226,7 +226,7 @@ export default function Testimonials() {
                     
                     {/* Route Info Badge */}
                     {review.route && (
-                      <div className={`flex items-center gap-1.5 border text-[11px] font-bold px-2.5 py-1 rounded-lg w-max ${theme.pillBg} ${theme.textColor} border-current/10`}>
+                      <div className={`flex items-center gap-1.5 border text-[11px] font-semibold px-2.5 py-1 rounded-lg w-max ${theme.pillBg} ${theme.textColor} border-current/10`}>
                         <MapPin className="w-3.5 h-3.5 shrink-0" />
                         <span>Route: {review.route}</span>
                       </div>
@@ -241,7 +241,7 @@ export default function Testimonials() {
                           className="w-10 h-10 rounded-full object-cover shadow-xs border border-gray-200 shrink-0"
                         />
                       ) : (
-                        <div className={`w-10 h-10 rounded-full text-white font-extrabold flex items-center justify-center text-sm shadow-xs shrink-0 ${theme.bgColor}`}>
+                        <div className={`w-10 h-10 rounded-full text-white font-semibold flex items-center justify-center text-sm shadow-xs shrink-0 ${theme.bgColor}`}>
                           {review.authorName ? review.authorName.charAt(0) : 'G'}
                         </div>
                       )}
@@ -251,7 +251,7 @@ export default function Testimonials() {
                           {review.authorName}
                           <CheckCircle2 className="w-4 h-4 text-emerald-500 fill-emerald-500/10 shrink-0" />
                         </h4>
-                        <span className="block text-[11px] text-gray-400 font-bold uppercase tracking-wider">
+                        <span className="block text-[11px] text-gray-400 font-semibold uppercase tracking-wider">
                           {review.location ? `${review.location} • ` : ''}{review.relativeTime || 'Verified Google Review'}
                         </span>
                       </div>

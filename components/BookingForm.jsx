@@ -279,7 +279,7 @@ export default function BookingForm({ className = "" }) {
         className="bg-white text-gray-800 w-full rounded-3xl p-5 md:p-6 shadow-2xl flex flex-col border border-gray-100"
       >
         <div className="mb-3">
-          <h2 className="text-xl font-bold text-gray-900 tracking-tight">
+          <h2 className="text-xl font-semibold text-gray-900 tracking-tight">
             Book Your Premium Taxi Ride
           </h2>
           <p className="text-xs text-gray-500 mt-0.5">
@@ -500,7 +500,7 @@ export default function BookingForm({ className = "" }) {
               <span className="block text-[11px] font-semibold uppercase tracking-wider text-gray-400">
                 3. Select Vehicle
               </span>
-              <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md">
+              <span className="text-[10px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">
                 Driver Bata: {fares.currency}
                 {activeVehicleObject.pricing.bata}
               </span>
@@ -541,7 +541,7 @@ export default function BookingForm({ className = "" }) {
                     </div>
                     <div className="w-full mt-0.5">
                       <div
-                        className={`text-[10px] font-bold leading-none ${theme.textColor}`}
+                        className={`text-[10px] font-semibold leading-none ${theme.textColor}`}
                       >
                         {fares.currency}
                         {vehicle.pricing?.perKm}/KM
@@ -549,7 +549,7 @@ export default function BookingForm({ className = "" }) {
                       <div className="text-[8px] text-gray-900 font-semibold mt-0.5 uppercase tracking-wide truncate">
                         {vehicle.name.split("(")[0].trim()}
                       </div>
-                      <div className="text-[7px] text-gray-400 font-medium">
+                      <div className="text-[7px] text-black font-medium">
                         Max: {vehicle.seats} Pax
                       </div>
                     </div>
@@ -563,7 +563,7 @@ export default function BookingForm({ className = "" }) {
         <button
           type="submit"
           disabled={isCalculating}
-          className={`w-full mt-4 text-white font-bold py-3 px-4 rounded-xl text-sm transition-all text-center shadow-lg flex items-center justify-center gap-2 ${theme.bgColor}`}
+          className={`w-full mt-4 text-white font-semibold py-3 px-4 rounded-xl text-sm transition-all text-center shadow-lg flex items-center justify-center gap-2 ${theme.bgColor}`}
         >
           <Calculator className="w-4 h-4" />
           {isCalculating ? "Calculating Route & Fare..." : "Get Fare Estimate"}
@@ -582,7 +582,7 @@ export default function BookingForm({ className = "" }) {
             >
               <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-100 bg-gray-50/50">
                 <div>
-                  <h3 className="text-base font-bold text-gray-900 flex items-center gap-2">
+                  <h3 className="text-base font-semibold text-gray-900 flex items-center gap-2">
                     <Navigation className="w-4 h-4 text-blue-600" />
                     {tripType === "one-way" ? "One Way Drop" : "Round Trip"}{" "}
                     Fare Estimate
@@ -601,7 +601,7 @@ export default function BookingForm({ className = "" }) {
 
               <div className="p-5 overflow-y-auto space-y-4">
                 <div className="bg-blue-50/50 border border-blue-100 rounded-2xl p-3.5 flex flex-col gap-2">
-                  <div className="flex items-center gap-2 text-xs font-bold text-gray-900">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-gray-900">
                     <span className="text-blue-600">
                       {formData.pickupAddress.split(",")[0]}
                     </span>
@@ -652,7 +652,7 @@ export default function BookingForm({ className = "" }) {
                     <span className="block text-[10px] text-gray-400 font-semibold uppercase">
                       Rate / KM
                     </span>
-                    <span className="text-sm font-bold text-gray-900">
+                    <span className="text-sm font-semibold text-gray-900">
                       {fares.currency}
                       {fareBreakdown.ratePerKm}
                     </span>
@@ -662,7 +662,7 @@ export default function BookingForm({ className = "" }) {
                     <span className="block text-[10px] text-gray-400 font-semibold uppercase">
                       Driver Allowance (Bata)
                     </span>
-                    <span className="text-sm font-bold text-gray-900">
+                    <span className="text-sm font-semibold text-gray-900">
                       {fares.currency}
                       {fareBreakdown.bata}
                     </span>
@@ -672,7 +672,7 @@ export default function BookingForm({ className = "" }) {
                     <span className="block text-[10px] text-gray-400 font-semibold uppercase">
                       Min Billing Limit
                     </span>
-                    <span className="text-sm font-bold text-gray-900">
+                    <span className="text-sm font-semibold text-gray-900">
                       {fareBreakdown.minKm} KM
                     </span>
                   </div>
@@ -694,7 +694,7 @@ export default function BookingForm({ className = "" }) {
 
                 <div className="bg-green-600/5 border border-dashed border-green-600 text-white rounded-2xl p-4 flex items-center justify-between">
                   <div>
-                    <span className="block text-[11px] text-gray-400 font-medium">
+                    <span className="block text-[11px] text-black font-medium">
                       Estimated Total Fare
                     </span>
                     <span className="text-2xl font-black tracking-tight text-green-600">
@@ -702,20 +702,10 @@ export default function BookingForm({ className = "" }) {
                       {fareBreakdown.totalEstimatedFare.toLocaleString()}
                     </span>
                   </div>
-                  <div className="text-right text-[10px] text-gray-400 leading-relaxed">
+                  <div className="text-right text-[10px] text-black leading-relaxed">
                     <div>Includes Base Fare & Driver Bata</div>
                     <div>Excludes Tolls & State Permits</div>
                   </div>
-                </div>
-
-                <div className="flex items-start gap-2 text-[11px] text-gray-500 bg-gray-50 border border-gray-100 p-3 rounded-xl">
-                  <Info className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
-                  <span>
-                    The estimated fare is calculated based on {fares.stateName}{" "}
-                    state taxi guidelines with a standard minimum threshold of{" "}
-                    {fareBreakdown.minKm} KM. Interstate tolls and highway
-                    parking fees are payable directly.
-                  </span>
                 </div>
               </div>
 
@@ -729,7 +719,7 @@ export default function BookingForm({ className = "" }) {
                 <button
                   onClick={handleConfirmAndBook}
                   disabled={isSubmitting}
-                  className={`w-full sm:w-2/3 py-2.5 text-xs font-bold text-white rounded-xl shadow-md flex items-center justify-center gap-2 transition ${theme.bgColor}`}
+                  className={`w-full sm:w-2/3 py-2.5 text-xs font-semibold text-white rounded-xl shadow-md flex items-center justify-center gap-2 transition ${theme.bgColor}`}
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
                   {isSubmitting

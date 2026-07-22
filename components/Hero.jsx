@@ -10,6 +10,7 @@ import BookingForm from "@/components/BookingForm";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
+import Image from "next/image";
 
 export default function TaxiBookingHero() {
   const { theme, fares } = useRegion();
@@ -29,10 +30,10 @@ export default function TaxiBookingHero() {
         >
           {theme.bgImage.map((src, idx) => (
             <SwiperSlide key={idx} className="w-full h-full">
-              <div
-                className="w-full h-full bg-cover bg-center bg-no-repeat scale-100"
-                style={{ backgroundImage: `url('${src}')` }}
+              <Image height={100} width={100}
+                className="w-full h-full object-cover bg-center " src={src}
               />
+
             </SwiperSlide>
           ))}
         </Swiper>
@@ -42,7 +43,7 @@ export default function TaxiBookingHero() {
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Left Hero Content Column */}
         <div className="lg:col-span-5 flex flex-col justify-center space-y-3">
-          <h1 className="text-2xl md:text-4xl font-bold uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-2xl md:text-3xl font-semibold uppercase tracking-tight text-white leading-tight">
             {companyInfo.companyName.split(" ").slice(0, 2).join(" ")}{" "}
             <span className={theme.textColor}>{fares.stateName}</span>
           </h1>
@@ -74,7 +75,7 @@ export default function TaxiBookingHero() {
           <div className="flex flex-col max-w-md sm:flex-row gap-3 pt-2">
             <a
               href={`tel:+${companyInfo.companyNumber}`}
-              className="flex items-center justify-center gap-2 bg-blue-700 text-white font-bold px-5 py-3 rounded-2xl hover:bg-blue-800 transition shadow-xs text-xs uppercase tracking-wide"
+              className="flex items-center justify-center gap-2 bg-blue-700 text-white font-semibold px-5 py-3 rounded-2xl hover:bg-blue-800 transition shadow-xs text-xs uppercase tracking-wide"
             >
               <Phone className="w-4 h-4 fill-current" />
               Call +{companyInfo.companyNumber}
@@ -83,7 +84,7 @@ export default function TaxiBookingHero() {
               href={`https://wa.me/${companyInfo.companyNumber}`}
               target="_blank"
               rel="noreferrer"
-              className={`flex items-center justify-center gap-2 text-white font-bold px-5 py-3 rounded-2xl transition shadow-xs text-xs uppercase tracking-wide ${theme.bgColor}`}
+              className={`flex items-center justify-center gap-2 text-white font-semibold px-5 py-3 rounded-2xl transition shadow-xs text-xs uppercase tracking-wide ${theme.bgColor}`}
             >
               <MessageSquare className="w-4 h-4 fill-current" />
               Book via WhatsApp
