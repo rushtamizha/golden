@@ -26,49 +26,110 @@ const TRANSFER_VEHICLES = [
     tag: 'MOST BOOKED',
     tagColor: 'bg-amber-500 text-white',
     capacity: '4+1',
-    luggage: '3 Standard Bags',
+    oneWay: '2,599',
+    round: '14/KM',
+    local:"2,499",
+    toll: 'Optional',
+    luggage: 'Standard',
     img: '/CardCars/swift-dzire-one-way-taxi-pondicherry-to-chennai.webp',
-    alt: 'Maruti Swift Dzire sedan taxi'
+    alt: 'Maruti Swift Dzire sedan taxi for Pondicherry to Chennai airport drop transfers'
   },
   {
     id: 'etios',
-    name: 'Toyota Etios / Sedan',
+    name: 'Toyota Etios / Sedan ',
     tag: null,
     capacity: '4+1',
-    luggage: '3 Standard Bags',
+    oneWay: '2,599',
+    round: '14/KM',
+      local:"2,499",
+    toll: 'Optional',
+    luggage: 'Standard',
     img: '/CardCars/toyota-etios-airport-taxi-pondicherry-to-chennai.webp',
-    alt: 'Toyota Etios airport taxi service'
+    alt: 'Toyota Etios airport taxi from Pondicherry to Chennai airport drop service'
+  },
+  {
+    id: 'ciaz',
+    name: 'Maruti Ciaz ',
+    tag: null,
+    capacity: '4+1',
+    oneWay: '2,799',
+    round: '15/KM',
+      local:false,
+    toll: 'Optional',
+    luggage: 'Standard',
+    img: '/CardCars/maruti-ciaz-premium-one-way-taxi-chennai-to-pondicherry.webp',
+    alt: 'Premium Maruti Ciaz airport taxi service from travel between Chennai and Pondicherry'
   },
   {
     id: 'ertiga',
-    name: 'Maruti Ertiga / MUV',
+    name: 'Maruti Ertiga ',
     tag: 'FAMILY PICK',
-    tagColor: 'bg-blue-600 text-white',
+    tagColor: 'bg-blue-700 text-white',
     capacity: '6+1',
-    luggage: '4 Large Bags',
+    oneWay: '3,599',
+    round: '19/KM',
+      local:"3,699",
+    toll: 'Optional',
+    luggage: 'Standard',
     img: '/CardCars/maruti-ertiga-6-plus-1-family-taxi-pondicherry-to-chennai.webp',
-    alt: 'Maruti Ertiga 6+1 family taxi booking'
+    alt: 'Maruti Ertiga 6+1 family airport taxi booking from Pondicherry to Chennai'
+  },{
+    id: 'carens',
+    name: 'Kia Carens ',
+    tag: 'FAMILY PICK',
+    tagColor: 'bg-blue-700 text-white',
+    capacity: '6+1',
+    oneWay: '3,599',
+    round: '19/KM',
+      local:"3,699",
+    toll: 'Optional',
+    luggage: 'Standard',
+    img: '/CardCars/kia-carens.webp',
+    alt: 'Maruti Ertiga 6+1 family airport taxi booking from Pondicherry to Chennai'
   },
   {
     id: 'innova',
-    name: 'Toyota Innova / SUV',
+    name: 'Toyota Innova ',
     tag: null,
     capacity: '7+1',
-    luggage: '5 Large Bags',
+   oneWay: '3,899',
+    round: '19/KM',
+      local:"4,099",
+    toll: 'Optional',
+    luggage: 'Large',
     img: '/CardCars/toyota-innova-7-seater-taxi-pondicherry-to-chennai.webp',
-    alt: 'Toyota Innova 7 seater outstation taxi'
+    alt: 'Toyota Innova 7 seater outstation airport taxi from Chennai to Pondicherry'
   },
   {
     id: 'crysta',
-    name: 'Innova Crysta / Premium SUV',
-    tag: 'LUXURY',
-    tagColor: 'bg-gray-900 text-white',
+    name: 'Toyota Innova Crysta ',
+    tag: 'PREMIUM',
+    tagColor: 'bg-blue-700 text-white',
     capacity: '7+1',
-    luggage: '5 Large Bags',
+    oneWay: '4,599',
+    round: '21/KM',
+      local:"4,499",
+    toll: 'Optional',
+    luggage: 'Large',
     img: '/CardCars/toyota-innova-crysta-airport-taxi-pondicherry-to-chennai.webp',
-    alt: 'Toyota Innova Crysta premium luxury taxi'
-  }
+    alt: 'Toyota Innova Crysta premium airport taxi for luxury family travel from Pondicherry to Chennai'
+  },
+  {
+    id: 'tempo',
+    name: 'Tempo Traveller ',
+    tag: 'GROUP',
+    tagColor: 'bg-blue-600 text-white',
+    capacity: '12+1',
+     oneWay: "7,599",
+    round: false,
+      local:"5,599",
+    toll: 'Optional',
+    luggage: 'XL Space',
+    img: '/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp',
+    alt: '12 Seater Tempo Traveller group commercial van booking for Chennai and Pondicherry airport routes'
+  },
 ];
+
 
 export default function AirportTransfers() {
   const { theme, fares } = useRegion();

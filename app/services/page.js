@@ -134,7 +134,7 @@ export default function ServicesPage() {
 
           <div className="lg:col-span-5 h-64 rounded-2xl overflow-hidden bg-gray-100 border border-gray-100 relative shadow-inner">
             <img 
-              src="/taxi-hero.png" 
+              src="/banner.webp" 
               alt={`${companyName} Ride Experience in ${fares.stateName}`} 
               className="w-full h-full object-cover"
             />

@@ -509,8 +509,9 @@ export default function BookingForm({ className = "" }) {
               ref={swiperRef}
               spaceBetween={8}
               slidesPerView={2.4}
-              loop={currentFleet.length > 4}
-              modules={[Autoplay]}
+               modules={[Autoplay]}
+              // loop={currentFleet.length > 4}
+              loop={false}
               autoplay={{
                 delay: 4000,
                 disableOnInteraction: true,

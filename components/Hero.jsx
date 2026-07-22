@@ -8,6 +8,7 @@ import { companyInfo } from "@/lib/data";
 import { useRegion } from "@/app/context/RegionContext";
 import BookingForm from "@/components/BookingForm";
 
+
 import "swiper/css";
 import "swiper/css/effect-fade";
 import Image from "next/image";
@@ -42,10 +43,10 @@ export default function TaxiBookingHero() {
 
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Left Hero Content Column */}
-        <div className="lg:col-span-5 flex flex-col justify-center space-y-3">
-          <h1 className="text-2xl md:text-3xl font-semibold uppercase tracking-tight text-white leading-tight">
+        <div className="lg:col-span-5 flex flex-col justify-center space-y-2">
+          <h1 className="text-3xl md:text-4xl font-semibold uppercase tracking-tight text-white leading-tight">
             {companyInfo.companyName.split(" ").slice(0, 2).join(" ")}{" "}
-            <span className={theme.textColor}>{fares.stateName}</span>
+            <span className={`block text-5xl md:text-6xl ${theme.textColor}`}>{fares.stateName} Taxi</span>
           </h1>
           <p className="text-white text-sm md:text-base max-w-xl">
             Book reliable one way drops, outstation trips, and airport transfers

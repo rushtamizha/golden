@@ -103,7 +103,7 @@ export default function AboutPage() {
             <div className={`absolute inset-0 bg-gradient-to-tr ${theme.pillBg} to-transparent rounded-[2.5rem] transform -rotate-3 scale-102 -z-10`} />
             <div className="w-full h-70 md:h-[350px] rounded-[2rem] overflow-hidden bg-gray-200 border border-white shadow-xs relative">
               <img 
-                src="/taxi-hero.png" 
+                src="/banner.webp" 
                 alt={`${companyName} Fleet Experience`} 
                 className="w-full h-full object-cover"
               />
