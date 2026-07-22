@@ -146,7 +146,7 @@ const Navbar = () => {
               }}
               transition={{ type: "spring", stiffness: 400, damping: 28 }}
               style={{
-                backgroundColor: region === "kerala" ? "#059669" : "#c52038"
+                backgroundColor: region === "kerala" ? "#059669" : "#D16B30"
               }}
             />
           </div>
@@ -212,7 +212,7 @@ const Navbar = () => {
                     animate={{ x: region === "tamil nadu" ? "100%" : "0%" }}
                     transition={{ type: "spring", stiffness: 450, damping: 30 }}
                     style={{
-                      backgroundColor: region === "kerala" ? "#059669" : "#c52038"
+                      backgroundColor: region === "kerala" ? "#059669" : "#D16B30"
                     }}
                   />
                 </div>
