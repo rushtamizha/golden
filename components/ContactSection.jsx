@@ -95,13 +95,13 @@ export default function ContactSection() {
                 </a>
 
                 {/* Service Area Card */}
-                <div className="p-5 border border-amber-600 bg-amber-50 rounded-2xl flex items-start gap-4 sm:col-span-2 shadow-xs hover:border-amber-700">
-                  <div className={`p-3 rounded-xl  bg-amber-600 text-white`}>
+                <div className="p-5 border border-rose-600 bg-rose-50 rounded-2xl flex items-start gap-4 sm:col-span-2 shadow-xs hover:border-rose-700">
+                  <div className={`p-3 rounded-xl  bg-rose-600 text-white`}>
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="text-xs font-semibold text-gray-400 uppercase">Service Area</h4>
-                    <p className="text-sm md:text-base font-semibold text-amber-600 mt-0.5">
+                    <p className="text-sm md:text-base font-semibold text-rose-600 mt-0.5">
                       {fares.stateName} & South India
                     </p>
                   </div>

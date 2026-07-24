@@ -307,11 +307,11 @@ export default function BookingForm({ className = "" }) {
                 <span className="text-[10px] opacity-70 font-normal mt-0.5">
                   Min Charged:{" "}
                   {fares.defaults?.oneWayMinKm ||
-                    (fares.stateName === "Kerala" ? 100 : 130)}{" "}
+                    (fares.stateName === "Kerala" ? 70 : 130)}{" "}
                   KM
                 </span>
               </button>
-              <button
+              { fares.defaults?.roundTripMinKm && <button
                 type="button"
                 onClick={() => setTripType("round-trip")}
                 className={`p-2.5 rounded-xl border font-semibold text-xs transition-all flex flex-col items-center justify-center ${
@@ -321,13 +321,13 @@ export default function BookingForm({ className = "" }) {
                 }`}
               >
                 <span>Round Trip</span>
-                <span className="text-[10px] opacity-70 font-normal mt-0.5">
+                 <span className="text-[10px] opacity-70 font-normal mt-0.5">
                   Min Charged:{" "}
                   {fares.defaults?.roundTripMinKm ||
-                    (fares.stateName === "Kerala" ? 150 : 250)}{" "}
+                    (fares.stateName === "Kerala" ? 0 : 250)}{" "}
                   KM / Day
-                </span>
-              </button>
+                </span> 
+              </button> }
             </div>
           </div>
 
@@ -508,7 +508,7 @@ export default function BookingForm({ className = "" }) {
             <Swiper
               ref={swiperRef}
               spaceBetween={8}
-              slidesPerView={2.4}
+              slidesPerView={3.5}
                modules={[Autoplay]}
               // loop={currentFleet.length > 4}
               loop={false}

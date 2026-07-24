@@ -4,135 +4,25 @@ import React from 'react';
 import Image from 'next/image';
 import { 
   Users, 
-  Briefcase, 
   Receipt, 
-  Phone, 
   MessageSquare, 
   PlaneTakeoff,
   ShieldCheck,
-  Repeat,
-  Info,
   Road
 } from 'lucide-react';
 import { companyInfo } from '@/lib/data';
 import { useRegion } from '@/app/context/RegionContext';
-import { SiToll } from 'react-icons/si';
-
-// Fleet Data populated dynamically with state fares fallback
-const TRANSFER_VEHICLES = [
-  {
-    id: 'sedan',
-    name: 'Swift Dzire / Sedan',
-    tag: 'MOST BOOKED',
-    tagColor: 'bg-amber-500 text-white',
-    capacity: '4+1',
-    oneWay: '2,599',
-    round: '14/KM',
-    local:"2,499",
-    toll: 'Optional',
-    luggage: 'Standard',
-    img: '/CardCars/swift-dzire-one-way-taxi-pondicherry-to-chennai.webp',
-    alt: 'Maruti Swift Dzire sedan taxi for Pondicherry to Chennai airport drop transfers'
-  },
-  {
-    id: 'etios',
-    name: 'Toyota Etios / Sedan ',
-    tag: null,
-    capacity: '4+1',
-    oneWay: '2,599',
-    round: '14/KM',
-      local:"2,499",
-    toll: 'Optional',
-    luggage: 'Standard',
-    img: '/CardCars/toyota-etios-airport-taxi-pondicherry-to-chennai.webp',
-    alt: 'Toyota Etios airport taxi from Pondicherry to Chennai airport drop service'
-  },
-  {
-    id: 'ciaz',
-    name: 'Maruti Ciaz ',
-    tag: null,
-    capacity: '4+1',
-    oneWay: '2,799',
-    round: '15/KM',
-      local:false,
-    toll: 'Optional',
-    luggage: 'Standard',
-    img: '/CardCars/maruti-ciaz-premium-one-way-taxi-chennai-to-pondicherry.webp',
-    alt: 'Premium Maruti Ciaz airport taxi service from travel between Chennai and Pondicherry'
-  },
-  {
-    id: 'ertiga',
-    name: 'Maruti Ertiga ',
-    tag: 'FAMILY PICK',
-    tagColor: 'bg-blue-700 text-white',
-    capacity: '6+1',
-    oneWay: '3,599',
-    round: '19/KM',
-      local:"3,699",
-    toll: 'Optional',
-    luggage: 'Standard',
-    img: '/CardCars/maruti-ertiga-6-plus-1-family-taxi-pondicherry-to-chennai.webp',
-    alt: 'Maruti Ertiga 6+1 family airport taxi booking from Pondicherry to Chennai'
-  },{
-    id: 'carens',
-    name: 'Kia Carens ',
-    tag: 'FAMILY PICK',
-    tagColor: 'bg-blue-700 text-white',
-    capacity: '6+1',
-    oneWay: '3,599',
-    round: '19/KM',
-      local:"3,699",
-    toll: 'Optional',
-    luggage: 'Standard',
-    img: '/CardCars/kia-carens.webp',
-    alt: 'Maruti Ertiga 6+1 family airport taxi booking from Pondicherry to Chennai'
-  },
-  {
-    id: 'innova',
-    name: 'Toyota Innova ',
-    tag: null,
-    capacity: '7+1',
-   oneWay: '3,899',
-    round: '19/KM',
-      local:"4,099",
-    toll: 'Optional',
-    luggage: 'Large',
-    img: '/CardCars/toyota-innova-7-seater-taxi-pondicherry-to-chennai.webp',
-    alt: 'Toyota Innova 7 seater outstation airport taxi from Chennai to Pondicherry'
-  },
-  {
-    id: 'crysta',
-    name: 'Toyota Innova Crysta ',
-    tag: 'PREMIUM',
-    tagColor: 'bg-blue-700 text-white',
-    capacity: '7+1',
-    oneWay: '4,599',
-    round: '21/KM',
-      local:"4,499",
-    toll: 'Optional',
-    luggage: 'Large',
-    img: '/CardCars/toyota-innova-crysta-airport-taxi-pondicherry-to-chennai.webp',
-    alt: 'Toyota Innova Crysta premium airport taxi for luxury family travel from Pondicherry to Chennai'
-  },
-  {
-    id: 'tempo',
-    name: 'Tempo Traveller ',
-    tag: 'GROUP',
-    tagColor: 'bg-blue-600 text-white',
-    capacity: '12+1',
-     oneWay: "7,599",
-    round: false,
-      local:"5,599",
-    toll: 'Optional',
-    luggage: 'XL Space',
-    img: '/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp',
-    alt: '12 Seater Tempo Traveller group commercial van booking for Chennai and Pondicherry airport routes'
-  },
-];
-
 
 export default function AirportTransfers() {
   const { theme, fares } = useRegion();
+
+  // Convert vehicles dictionary object into an array with keys included as 'id'
+  const vehicleList = Object.entries(fares.vehicles || {}).map(([key, value]) => ({
+    id: key,
+    ...value,
+  }));
+
+  console.log(vehicleList)
 
   return (
     <section id="fleets" className="w-full bg-white py-12 px-4 md:px-8 lg:px-16 text-gray-800 relative">
@@ -156,12 +46,10 @@ export default function AirportTransfers() {
 
         {/* VEHICLE CARDS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {TRANSFER_VEHICLES.map((item) => {
-            // Retrieve regional pricing from fares context if available
-            const vehicleFareData = fares?.vehicles?.[item.id] || fares?.vehicles?.sedan || {};
-            const oneWayRate = vehicleFareData.oneWay?.perKm || 16;
-            const roundTripRate = vehicleFareData.roundTrip?.perKm || 14;
-            const driverBata = vehicleFareData.oneWay?.bata || 200;
+          {vehicleList.map((item) => {
+            const oneWayRate = item.oneWay?.perKm || 0;
+            const roundTripRate = item.roundTrip?.perKm || 0;
+            const driverBata = item.oneWay?.bata ?? 0;
 
             return (
               <div key={item.id} className="h-full flex">
@@ -178,10 +66,10 @@ export default function AirportTransfers() {
                   <div className="w-full h-48 bg-gray-50 flex items-center justify-center relative overflow-hidden border-b border-gray-100">
                     <div className="w-full h-full relative transition-transform duration-500 group-hover:scale-105">
                       <Image 
-                        src={item.img} 
-                        alt={item.alt} 
+                        src={item.thumbnail} 
+                        alt={item.name} 
                         fill
-                        className="object-cover "
+                        className="object-cover  "
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
@@ -198,7 +86,7 @@ export default function AirportTransfers() {
                         </h3>
                         <span className="flex items-center gap-1 bg-gray-100 text-gray-700 text-[11px] font-semibold px-2.5 py-1 rounded-md shrink-0">
                           <Users className="w-3.5 h-3.5 text-gray-500" />
-                          {item.capacity}
+                          {item.seats} Seats
                         </span>
                       </div>
 
@@ -221,25 +109,25 @@ export default function AirportTransfers() {
                         </div>
 
                         {/* Round Trip Rate */}
-                        <div className="flex justify-between items-center bg-gray-50 p-2.5 rounded-xl border border-gray-100">
+                        {item.roundTrip && <div className="flex justify-between items-center bg-gray-50 p-2.5 rounded-xl border border-gray-100">
                           <span className="text-gray-700 font-semibold">Round Trip Rate</span>
                           <span className="text-base font-semibold text-gray-900">
                             {fares.currency}{roundTripRate}/KM
                           </span>
-                        </div>
+                        </div> }
 
                         {/* Driver Allowance (Bata) */}
-                        <div className="flex justify-between items-center px-1 pt-1 text-gray-500 text-[11px]">
+                        { item.roundTrip &&<div className="flex justify-between items-center px-1 pt-1 text-gray-500 text-[11px]">
                           <span className="flex items-center gap-1.5">
                             <Receipt className="w-3.5 h-3.5 text-gray-400" />
                             Driver Allowance (Bata)
                           </span>
                           <span className="font-semibold text-gray-800">
-                            {fares.currency}{driverBata}
+                            {driverBata > 0 ? `${fares.currency}${driverBata}` : "Included / Nil"}
                           </span>
-                        </div>
+                        </div> }
 
-                        {/* Luggage Capacity */}
+                        {/* Toll / Permit Charges */}
                         <div className="flex justify-between items-center px-1 text-gray-500 text-[11px]">
                           <span className="flex items-center gap-1.5">
                             <Road className="w-3.5 h-3.5 text-gray-400" />

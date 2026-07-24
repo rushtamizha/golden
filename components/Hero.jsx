@@ -32,7 +32,7 @@ export default function TaxiBookingHero() {
           {theme.bgImage.map((src, idx) => (
             <SwiperSlide key={idx} className="w-full h-full">
               <Image height={100} width={100}
-                className="w-full h-full object-cover bg-center " src={src}
+                className="w-full h-full object-cover bg-center " src={src} alt="one-way-drop-taxi"
               />
 
             </SwiperSlide>
